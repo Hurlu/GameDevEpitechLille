@@ -18,8 +18,7 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: hugo.willaume@epitech.eu
-  email: gabriel.forteville@epitech.eu
+  email:
   facebook:
   flickr:
   github: Hurlu/Hurlu.github.io
