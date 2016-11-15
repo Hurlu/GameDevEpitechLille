@@ -8,9 +8,10 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" type="text/css" href="/resources/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -27,18 +28,22 @@
           </div>
 
           <nav>
-<!--            <a href="{{ site.baseurl }}/">Blog</a> !-->
+            <a href="{{ site.baseurl }}/">Blog</a>
 	    <a href="{{ site.baseurl }}/fiches">Fiches Tech'</a>
 	    <a href="{{ site.baseurl }}/game_talks">Game Talks</a>
 	    <a href="{{ site.baseurl }}/game_jams">Game jams</a>
-	    <a href="{{ site.baseurl }}/about">A propos</a>
+	    <a href="{{ site.baseurl }}/about">A propos de nous</a>
           </nav>
         </header>
       </div>
     </div>
 
     <div id="main" role="main" class="container">
-      {{ content }}
+      <h3>Le site:</h3>
+      <p>  Etudiants d'Epitech et autres aspirants Game Dev', ce site, on l'a fait pour vous !</p>
+      <p> Vous trouverez ici des fiches techniques pour vous lancer + vite dans le dev', les slides des "Game talks", des présentations autour d'un sujet de Game design, ainsi qu'un calendrier de quelques futures games jams sélectionnées par nos soins .</p>
+      <h3> L'asso: </h3>
+      Créée en 2015 à notre initiative (Gabriel Forteville et Hugo Willaume), cet association à pour but de rassembler au sein de notre école les personnes voulant se lancer dans le game dev afin de pouvoir partager nos connaissances plus activement, et les aider à s'investir plus dans le Game Dev.
     </div>
 
     <div class="wrapper-footer">
@@ -48,7 +53,5 @@
         </footer>
       </div>
     </div>
-
-    {% include analytics.html %}
   </body>
 </html>
