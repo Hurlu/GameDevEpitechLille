@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <style>
+      .col-xs-5{
+      border: 1px grey solid;
+      text-align: center;
+      padding: 0 !important;
+      }
+
+      .titlediv{
+      background: grey;
+      font-weight: bolder;
+      border: 1px grey solid;
+      }
+
+      .titlediv h3{
+            color: white;
+      }
+
+      .col-xs-5 p{
+      border-top: 1px solid grey
+      }
+    </style>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
@@ -10,7 +32,7 @@
     <![endif]-->
       
       <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-      <link rel="stylesheet" type="text/css" href="/resources/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/resources/bootstrap.min.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
@@ -38,16 +60,18 @@
       </div>
     </div>
     <div class="container" role="main" id="main">
-
       {% for each in site.game_talks %}
 	{% capture modulo %}{{forloop.index0 |mod:3}}{% endcapture %}
 	{% if modulo == 0 or forloop.first %}
-	  <div class="row-fluid">
+	  <div class="row">
 	{% endif %}
 
-	<div class="col-xs-4">
-	  <iframe src="{{ each.prezi }}"></iframe>
-	  Test!
+	<div class="{% cycle "col-xs-5", "col-xs-offset-2 col-xs-5"%}">
+	  <div class="titlediv">
+	    <h3> {{ each.title }}</h3>
+	  </div>
+	  {{ each.prezi }}
+	  <p> {{ each.description }} </p>
         </div>
 
       {% if modulo == 2 or forloop.last %}

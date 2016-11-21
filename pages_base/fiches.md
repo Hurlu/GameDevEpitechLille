@@ -4,9 +4,7 @@ permalink: /fiches/
 layout: page
 ---
 
-Et là y'aura des fiches techniques !
-
 {% for fiche in site.fiches %}
-   {{ fiche.title }}
+<h2 style="text-align: center">   {{ fiche.title }} </h2>
    {{ fiche.content }}
 {% endfor %}

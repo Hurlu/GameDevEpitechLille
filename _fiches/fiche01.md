@@ -1,5 +1,3 @@
 ---
-title: Fiche une !
+title: Coming Soon !
 ---
-
-Test !
