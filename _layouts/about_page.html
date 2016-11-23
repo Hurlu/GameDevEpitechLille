@@ -17,26 +17,8 @@
   </head>
 
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-	    <a href="{{ site.baseurl }}/fiches">Fiches Tech'</a>
-	    <a href="{{ site.baseurl }}/game_talks">Game Talks</a>
-	    <a href="{{ site.baseurl }}/game_jams">Game jams</a>
-	    <a href="{{ site.baseurl }}/about">A propos</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
+    {% include header.html %}
+    
     <div id="main" role="main" class="container">
       <h3>Le site:</h3>
       <p>  Etudiants d'Epitech et autres aspirants Game Dev', ce site, on l'a fait pour vous !</p>
@@ -45,12 +27,6 @@
       Créée en 2015 à notre initiative (Gabriel Forteville et Hugo Willaume), cet association à pour but de rassembler au sein de notre école les personnes voulant se lancer dans le game dev afin de pouvoir partager nos connaissances plus activement, et les aider à s'investir plus dans le Game Dev.
     </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
+    {% include footer.html %}
   </body>
 </html>
