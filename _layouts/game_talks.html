@@ -61,8 +61,8 @@
     </div>
     <div class="container" role="main" id="main">
       {% for each in site.game_talks %}
-	{% capture modulo %}{{forloop.index0 |mod:3}}{% endcapture %}
-	{% if modulo == 0 or forloop.first %}
+      {% capture modulo %}{{forloop.index0 |mod:2}}{% endcapture %}
+	{% if modulo == "0" or forloop.first %}
 	  <div class="row">
 	{% endif %}
 
@@ -74,7 +74,7 @@
 	  <p> {{ each.description }} </p>
         </div>
 
-      {% if modulo == 2 or forloop.last %}
+      {% if modulo == "1" or forloop.last %}
         </div>
       {% endif %}
     {% endfor %}
