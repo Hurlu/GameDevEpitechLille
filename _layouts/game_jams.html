@@ -29,12 +29,17 @@
 
     <div class="container" role="main" id="main">
       <script>
+          $('.modal').modal({
+              'show': false,
+              keyboard: true,
+          })
+
 	$(function() {
 	$("#calendar").fullCalendar({
-	header : {left: 'prev,next today',
+	   header : {left: 'prev,next today',
 			center: 'title','right': "month, agendaWeek, listYear"},
-	       timeFormat: 'H:mm',
-    	        events: [
+	    timeFormat: 'H:mm',
+    	events: [
    	            {% for each in site.game_jams %}
      	                {
 	                    title : "{{ each.title }}",
@@ -43,7 +48,7 @@
  	                    {% endif %}
 	                    start : "{{ each.start }}",
                             {% if each.end %}end : "{{ each.end }}", {% endif %}
-                            {% if each.jamurl %}url : "{{ each.jamurl }}", {% endif %}
+                            {% if each.url %}url : "{{ each.jamurl }}", {% endif %}
                             editable : false,
                             {% if each.color %}color : "{{ each.color }}", {% endif %}
                             {% if each.backgroundColor %}backgroundColor : "{{ each.backgroundColor }}", {% endif %}
@@ -51,21 +56,25 @@
                             {% if each.textColor %}textColor : "{{ each.textColor }}", {% endif %}
                          },
 	             {% endfor %}
- 	               ]
-            });
-	});
+ 	        ],
+    });
+  });
       </script>
-      
+
       <div id="calendar">
       </div>
 
 <p>      Calendriers de game jams : </p>
       <a href="http://www.indiegamejams.com/"> indiegamejams.com </a> <br>
       <a href="https://itch.io/jams"> itch.io jams </a>
-      
+
     </div>
 
+ <div class="modal fade">
+
+ </div>
+
 {% include footer.html %}
-    
+
   </body>
 </html>
