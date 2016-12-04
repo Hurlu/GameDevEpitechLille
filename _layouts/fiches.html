@@ -7,21 +7,60 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <link href="{{ site.baseurl }}/resources/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ site.baseurl }}/style.css" type="text/css" rel="stylesheet"/>
 
 </head>
 
 <body>
 
+<style>
+#bigtitle{
+  margin: 0 0 3% 0;
+  text-align: center;
+}
+
+.fiche{
+  border-bottom: 1px solid #dedede;
+}
+
+.round{
+  border-radius: 100%;
+  background-color: #e2e2e2;
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  top: 55px;
+}
+
+.round p{
+  text-align: center;
+  font-weight: bolder;
+  color: grey;
+  font-size: 24px;
+  position: relative;
+  top: 11%;
+}
+
+</style>
+
 {% include header.html %}
   <div class="container" role="main" id="main">
-    <h2 align="center"> Fiches techniques</h2>
+    <h1 id="bigtitle"> Fiches techniques</h1>
 
-    {% for each in site.fiches %}
+    {% for each in site.fiches reversed %}
+    <div class="fiche row">
+      <div class="col-xs-2">
+        <div class="round">
+          <p>{{ each.number }}</p>
+        </div>
+      </div>
+      <div class="col-xs-10">
        <h4>{{ each.title }}</h4>
-       <p> {{ each.info }} <p>
+       <p> {{ each.content }} <p>
          Pdf <a href="{{ site.baseurl }}/resources/PDFJS/web/viewer.html?file={{ site.baseurl }}{{ each.pdf }}"> en lecture ici. </a>
+    </div>
+  </div>
     {% endfor %}
 
   </div>
