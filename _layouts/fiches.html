@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="{{ site.baseurl }}/style.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+{% include header.html %}
+  <div class="container" role="main" id="main">
+    <h2 align="center"> Fiches techniques</h2>
+
+    {% for each in site.fiches %}
+       <h4>{{ each.title }}</h4>
+       <p> {{ each.info }} <p>
+         Pdf <a href="{{ site.baseurl }}/resources/PDFJS/web/viewer.html?file={{ site.baseurl }}{{ each.pdf }}"> en lecture ici. </a>
+    {% endfor %}
+
+  </div>
+    {% include footer.html %}
+
+
+</body>

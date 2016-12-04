@@ -1,10 +1,5 @@
 ---
 title: Fiches Techniques
 permalink: /fiches/
-layout: page
+layout: fiches
 ---
-
-{% for fiche in site.fiches %}
-<h2 style="text-align: center">   {{ fiche.title }} </h2>
-   {{ fiche.content }}
-{% endfor %}
