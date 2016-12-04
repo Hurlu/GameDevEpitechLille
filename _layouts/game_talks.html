@@ -46,12 +46,9 @@
     {% include header.html %}
     <div class="container" role="main" id="main">
       {% for each in site.game_talks %}
-      {% capture modulo %}{{forloop.index0 |mod:2}}{% endcapture %}
-	{% if modulo == "0" or forloop.first %}
-	  <div class="row">
-	{% endif %}
+  	  {% cycle 'group1': "<div class='row'>", "" %}
 
-	<div class="{% cycle "col-xs-5", "col-xs-offset-2 col-xs-5"%}">
+	<div class="{% cycle 'group2': "col-xs-5", "col-xs-offset-2 col-xs-5"%}">
 	  <div class="titlediv">
 	    <h3> {{ each.title }}</h3>
 	  </div>
@@ -59,13 +56,12 @@
 	  <p> {{ each.description }} </p>
         </div>
 
-      {% if modulo == "1" or forloop.last %}
-        </div>
-      {% endif %}
+
+        {% cycle 'group3': "", "</div>" %}
     {% endfor %}
 </div>
 
     {% include footer.html %}
-    
+
   </body>
 </html>
